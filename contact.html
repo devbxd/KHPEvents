@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 100px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding-left: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      display: inline-block;
+    }
+
+    .nav-links a {
+      color: #ae8b38;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      margin: 80px auto 40px;
+      padding: 30px 20px;
+      background-color: rgba(61, 54, 54, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      box-sizing: border-box;
+    }
+
+    .contact-container h2 {
+      color: #ae8b38;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 35px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .contact-info p {
+      margin: 6px 0;
+    }
+
+    .contact-info a {
+      color: #ae8b38;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-info img {
+      width: 20px;
+      height: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #f0f0f0;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    input[type="submit"] {
+      background-color: #ae8b38;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        height: 80px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .contact-container {
+        margin: 40px 15px 20px;
+        padding: 20px 15px;
+      }
+
+      .contact-container h2 {
+        font-size: 24px;
+      }
+
+      input, select, textarea {
+        font-size: 14px;
+      }
+
+      input[type="submit"] {
+        font-size: 16px;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+    }
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #ae8b38;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0,0,0,0.9);
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop class="background-video">
+    <source src="video.mp4" type="video/mp4" />
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="1.jpg" alt="Logo" />
+    </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="Booking.html">Booking</a></li>
+      <li><a href="biographie.html">DJ Kheem H</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-container">
+    <h2>Contact</h2>
+
+    <div class="contact-info">
+      <p>Adresse : rue Rodolphe-Toepffer 8, c/o Bona Fide Business Sàrl, 1206 Genève</p>
+      <p>Téléphone : +41 79 505 84 43</p>
+      <p>Email : kheemh@gmail.com</p>
+      <p>
+        Instagram :
+        <a href="https://www.instagram.com/djkheemh?igsh=MW9xczl1MzVvY3E2eg==" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+          @djkheemh
+        </a>
+      </p>
+    </div>
+
+    <form action="#" method="post">
+      <label for="prenom">Prénom</label>
+      <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+
+      <label for="nom">Nom de famille</label>
+      <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+
+      <label for="telephone">Téléphone</label>
+      <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone">
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required placeholder="Votre email">
+
+      <label for="infos">Infos supplémentaires</label>
+      <textarea id="infos" name="infos" rows="4" placeholder="Votre message ou questions..."></textarea>
+
+      <input type="submit" value="Envoyer">
+    </form>
+  </div>
+
+
+
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
