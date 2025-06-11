@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samantha - Artiste</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      color: rgb(0, 0, 0);
+      background-color: transparent
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+
+    .container {
+      position: relative;
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 0 20px;
+      z-index: 1;
+    }
+
+    .artist-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .artist-header img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .artist-header img:hover {
+      transform: scale(1.05);
+    }
+
+    
+
+    h1 {
+      margin-top: 30px;
+      font-size: 36px;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .bio {
+  background-color: rgba(30, 30, 30, 0.6); /* noir avec opacité 60% */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  color: rgb(255, 255, 255); /* texte blanc */
+}
+
+
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      color: #000000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a.back:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src=".mp4" type="video/mp4">
+  </video>
+
+  <div class="container">
+
+
+
+  <div class="container">
+    <div class="artist-header">
+      <img src="samantha.png" alt="Samantha">
+      <h1>Samantha Flores</h1>
+    </div>
+
+
+
+
+
+    <div class="bio">
+      <p><strong>Samantha</strong> Flores est une artiste multidisciplinaire à l’âme libre et créative. Portée par une sensibilité rare et une esthétique unique, elle façonne des univers intimes et puissants, où l’émotion rencontre l’authenticité.
+
+Que ce soit à travers la musique, la performance ou l’image, Samantha repousse les frontières traditionnelles pour exprimer sa vision du monde. Son travail puise dans ses racines, son vécu et ses voyages, donnant naissance à des œuvres à la fois modernes, profondes et inspirantes.
+</p>
+    </div>
+
+    <a href="booking.html" class="back">← Retour à la page Booking</a>
+  </div>
+
+</body>
+</html>
