@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Vidéo de fond */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      border-bottom: 2px solid #444;
+      z-index: 2;
+      position: relative;
+    }
+
+    .playlist {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    .track {
+      background: rgb(51, 46, 46);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: transform 0.2s;
+    }
+
+    .track:hover {
+      transform: scale(1.03);
+    }
+
+    .track-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    audio {
+      width: 100%;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ae8b38;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #ae8b38;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vidéo de fond -->
+  <video class="background-video" autoplay muted loop playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <header>🎵 Playlist</header>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img src="1.jpg" alt="Logo" />
+    </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="biographie.html">DJ Kheem H</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="playlist">
+    <div class="track">
+      <div class="track-title">The Underground (Extended Mix)</div>
+      <audio controls>
+        <source src="11.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+    <div class="track">
+      <div class="track-title">Ahmed Spins feat Stevo Atambire -  Anchor Point</div>
+      <audio controls>
+        <source src="12.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+     <div class="track">
+      <div class="track-title">Moderat - More Love (Rampa &ME Remix)</div>
+      <audio controls>
+        <source src="13.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+
+     <div class="track">
+      <div class="track-title">Spacer</div>
+      <audio controls>
+        <source src="14.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+
+     <div class="track">
+      <div class="track-title">&ME, Black Coffee - The Rapture Pt.III</div>
+      <audio controls>
+        <source src="15.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+
+     <div class="track">
+      <div class="track-title">Tayna - Si Ai (Marshmello & UKAY Remix)</div>
+      <audio controls>
+        <source src="16.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas l'élément audio.
+      </audio>
+    </div>
+
+
+     
+
+
+   
+  </section>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
