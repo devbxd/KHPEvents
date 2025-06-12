@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking - Artistes disponibles</title>
+  <style>
+    /* --- VIDÉO DE FOND --- */
+    .background-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ae8b38;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ae8b38;
+    }
+
+    .booking-section {
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .booking-section h2 {
+      font-size: 32px;
+      color: #ae8b38;
+      margin-bottom: 50px;
+    }
+
+    .artist-cards {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .artist-link {
+      text-decoration: none;
+      display: block;
+    }
+
+    .artist-card {
+      background-color: #1e1e1e;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .artist-card:hover {
+      transform: scale(1.05);
+    }
+
+    .artist-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .artist-card p {
+      padding: 12px;
+      font-size: 15px;
+      color: #fff;
+      background-color: #1c1c1c;
+      margin: 0;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      color: white;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #ae8b38;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #ae8b38;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 600px) {
+      .artist-card {
+        width: 90%;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .navbar {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Vidéo de fond -->
+  <video class="background-video" autoplay loop muted playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+  </video>
+
+  <!-- Overlay sombre -->
+  <div class="overlay"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="1.jpg" alt="Logo" />
+    </div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="biographie.html">DJ Kheem H</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="booking-section">
+    <h2>Artist Booking</h2>
+
+    <div class="artist-cards">
+      <a href="bohemian.html" class="artist-link">
+        <div class="artist-card">
+          <img src="artiste1.jpg" alt="Bohemian">
+          <p>Bohemian</p>
+        </div>
+      </a>
+
+      <a href="grossomoddo.html" class="artist-link">
+        <div class="artist-card">
+          <img src="artiste2.jpg" alt="GROSSOMODDO">
+          <p>GROSSOMODDO</p>
+        </div>
+      </a>
+
+      <a href="samantha.html" class="artist-link">
+        <div class="artist-card">
+          <img src="samantha.png" alt="Samantha">
+          <p>SAMANTA FLORES</p>
+        </div>
+      </a>
+
+      <a href="Alexandre.html" class="artist-link">
+        <div class="artist-card">
+          <img src="alex.png" alt="Alexandre">
+          <p>Alexandre Billard</p>
+        </div>
+      </a>
+    </div>
+
+    <p style="margin-top: 50px; color: #ae8b38; font-size: 18px; font-style: italic;">
+      D'autres artistes vont bientôt signer… Restez connectés !
+    </p>
+  </section>
+
+  <!-- MODAL -->
+  <div id="artistModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalName">Nom de l'artiste</h3>
+      <p id="modalBio">Biographie de l'artiste ici...</p>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    const modal = document.getElementById("artistModal");
+    const modalName = document.getElementById("modalName");
+    const modalBio = document.getElementById("modalBio");
+    const closeBtn = document.querySelector(".close");
+
+    function openModal(name, bio) {
+      modalName.textContent = name;
+      modalBio.textContent = bio;
+      modal.classList.add("show");
+      modal.style.display = "flex";
+    }
+
+    closeBtn.onclick = function () {
+      modal.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    }
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.classList.remove("show");
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 300);
+      }
+    }
+  </script>
+
+</body>
+</html>
