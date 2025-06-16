@@ -104,6 +104,11 @@
       gap: 6px;
     }
 
+    .highlight {
+      color: yellow;
+      font-weight: bold;
+    }
+
     .contact-info img {
       width: 20px;
       height: 20px;
@@ -148,11 +153,6 @@
 
     input[type="submit"]:hover {
       background-color: #fff;
-    }
-
-    .highlight {
-      color: yellow;
-      font-weight: bold;
     }
 
     @media (max-width: 768px) {
@@ -236,69 +236,70 @@
 </head>
 <body>
 
-  <video autoplay muted loop class="background-video">
-    <source src="video.mp4" type="video/mp4" />
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
+<video autoplay muted loop class="background-video">
+  <source src="video.mp4" type="video/mp4" />
+  Votre navigateur ne supporte pas la vidéo.
+</video>
 
-  <nav class="navbar">
-    <div class="logo">
-      <img src="1.jpg" alt="Logo" />
-    </div>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="boooking.html">Booking</a></li>
-      <li><a href="biographie.html">DJ Kheem H</a></li>
-      <li><a href="location.html">Location</a></li>
-      <li><a href="playlist.html">Playlist</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="navbar">
+  <div class="logo">
+    <img src="1.jpg" alt="Logo" />
+  </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="boooking.html">Booking</a></li>
+    <li><a href="biographie.html">DJ Kheem H</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="playlist.html">Playlist</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="contact-container">
-    <h2>Contact</h2>
+<div class="contact-container">
+  <h2>Contact</h2>
 
-    <div class="contact-info">
-      <p>Adresse : rue Rodolphe-Toepffer 8, c/o Bona Fide Business Sàrl, 1206 Genève</p>
-      <p>Téléphone : <span class="highlight">+41 79 505 84 43</span></p>
-      <p>Email : <span class="highlight">kheemh@gmail.com</span></p>
-      <p>
-        Instagram :
-        <a href="https://www.instagram.com/djkheemh?igsh=MW9xczl1MzVvY3E2eg==" target="_blank" rel="noopener noreferrer">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
-          @djkheemh
-        </a>
-      </p>
-    </div>
-
-    <form action="#" method="post">
-      <label for="prenom">Prénom</label>
-      <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
-
-      <label for="nom">Nom de famille</label>
-      <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-
-      <label for="telephone">Téléphone</label>
-      <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone">
-
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required placeholder="Votre email">
-
-      <label for="infos">Infos supplémentaires</label>
-      <textarea id="infos" name="infos" rows="4" placeholder="Votre message ou questions..."></textarea>
-
-      <input type="submit" value="Envoyer">
-    </form>
+  <div class="contact-info">
+    <p>Adresse : rue Rodolphe-Toepffer 8, c/o Bona Fide Business Sàrl, 1206 Genève</p>
+    <p>Téléphone : <a class="highlight" href="tel:+41795058443">+41 79 505 84 43</a></p>
+    <p>Email : <a class="highlight" href="mailto:kheemh@gmail.com">kheemh@gmail.com</a></p>
+    <p>
+      Instagram :
+      <a href="https://www.instagram.com/djkheemh?igsh=MW9xczl1MzVvY3E2eg==" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram" />
+        @djkheemh
+      </a>
+    </p>
   </div>
 
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-  </script>
+  <form action="#" method="post">
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+
+    <label for="nom">Nom de famille</label>
+    <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone">
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required placeholder="Votre email">
+
+    <label for="infos">Infos supplémentaires</label>
+    <textarea id="infos" name="infos" rows="4" placeholder="Votre message ou questions..."></textarea>
+
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
