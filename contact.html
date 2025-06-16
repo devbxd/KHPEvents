@@ -150,6 +150,11 @@
       background-color: #fff;
     }
 
+    .highlight {
+      color: yellow;
+      font-weight: bold;
+    }
+
     @media (max-width: 768px) {
       .navbar {
         padding: 10px 20px;
@@ -193,43 +198,40 @@
       }
     }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  color: #ae8b38;
-  cursor: pointer;
-  user-select: none;
-}
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: #ae8b38;
+      cursor: pointer;
+      user-select: none;
+    }
 
-@media (max-width: 600px) {
-  .menu-toggle {
-    display: block;
-  }
-  
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(0,0,0,0.9);
-    padding: 10px 0;
-    margin: 0;
-  }
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+      }
 
-  .nav-links.show {
-    display: flex;
-  }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px 0;
+        margin: 0;
+      }
 
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-}
+      .nav-links.show {
+        display: flex;
+      }
 
-
-
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -243,15 +245,15 @@
     <div class="logo">
       <img src="1.jpg" alt="Logo" />
     </div>
-      <div class="menu-toggle" id="menu-toggle">☰</div>
-   <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="boooking.html">Booking</a></li>
-        <li><a href="biographie.html">DJ Kheem H</a></li>
-        <li><a href="location.html">Location</a></li>
-        <li><a href="playlist.html">Playlist</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="boooking.html">Booking</a></li>
+      <li><a href="biographie.html">DJ Kheem H</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="playlist.html">Playlist</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
   <div class="contact-container">
@@ -259,8 +261,8 @@
 
     <div class="contact-info">
       <p>Adresse : rue Rodolphe-Toepffer 8, c/o Bona Fide Business Sàrl, 1206 Genève</p>
-      <p>Téléphone : +41 79 505 84 43</p>
-      <p>Email : kheemh@gmail.com</p>
+      <p>Téléphone : <span class="highlight">+41 79 505 84 43</span></p>
+      <p>Email : <span class="highlight">kheemh@gmail.com</span></p>
       <p>
         Instagram :
         <a href="https://www.instagram.com/djkheemh?igsh=MW9xczl1MzVvY3E2eg==" target="_blank" rel="noopener noreferrer">
@@ -290,23 +292,13 @@
     </form>
   </div>
 
-
-
-<script>
-
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-
-
-</script>
-
-
-
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
